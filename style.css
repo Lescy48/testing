@@ -284,6 +284,7 @@ nav a:hover {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
+  margin-bottom: 25px;
 }
 
 .logout-btn:hover {
@@ -417,4 +418,11 @@ footer {
 .no {
     background-color: gray !important; /* Force gray */
     color: white !important;
+}
+
+.ads-top {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-top: 2px;
 }
