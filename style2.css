@@ -1,0 +1,717 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Hilangkan efek tap biru di mobile */
+  -webkit-touch-callout: none; /* Cegah menu popup (iOS) */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+}
+
+.container {
+  padding: 40px 200px;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.image-section img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.details-section {
+  max-width: 600px;
+}
+
+.details-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.details-section p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Synopsis styling */
+.synopsis {
+  text-align: left;
+  margin-top: 20px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.synopsis h3 {
+  font-size: 1.5em;
+  color: #f8c471;
+  padding-bottom: 5px;
+}
+
+.synopsis p {
+  line-height: 1.5;
+  padding: 10px 0px;
+}
+
+.synopsis a {
+text-decoration: none;
+color: #4561ff
+}
+
+.synopsis a:hover {
+  text-decoration: underline;
+  color: #4561ff;
+  transition: color 0.3s;
+}
+
+.synopsis-img {
+  width: 100%;
+  max-width: 250px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+
+/*download link*/
+.download {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.download h3 {
+  font-size: 1.3em;
+  color: #4d67fc;
+  padding-bottom: 10px;
+}
+
+.download a {
+  text-decoration: none;
+  margin: 0px 7px;
+  color: #fff;
+}
+
+.download a:hover {
+  text-decoration: underline;
+  color: #4561ff;
+  transition: color 0.3s;
+}
+
+.download p {
+  padding: 3px 0px;
+}
+
+/* Comment */
+.comment {
+  text-align: left;
+  margin-top: 20px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+.comment h3 {
+  font-size: 1.5em;
+  color: #ffffff;
+  padding-bottom: 5px;
+}
+.comment-line {
+  width: 100%;
+  height: 2px;
+  margin-bottom: 10px;
+  background-color: #bbb;
+}
+#comment-form {
+  margin-top: 10px;
+}
+#comment-form textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #444;
+  color: #fff;
+  resize: none;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+}
+#comment-form button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#comment-form button:hover {
+  background-color: #45a049;
+}
+.comment-list {
+  margin-top: 10px;
+}
+.comment-item {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+textarea {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background-color: #333;
+}
+textarea::placeholder {
+  color: #c5c5c5;
+  font-style: italic;
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+}
+
+header h1 {
+  font-size: 4em;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #bbb;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-section img {
+    max-width: 100%;
+  }
+
+  .details-section {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .logout-menu {
+    width: 90%; /* Make menu smaller for mobile */
+  }
+}
+
+/* Menu icon */
+.menu-icon {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+@media (max-width: 484px) {
+  .menu-icon {
+    top: 171px
+  }
+}
+
+.menu-icon .line {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+/* Darken the icon lines on hover */
+.menu-icon:hover .line {
+  background-color: #bbb; /* Darker color on hover */
+}
+
+/* Logout menu */
+.logout-menu {
+  position: fixed;
+  top: 0;
+  left: -50%; /* Start from the left, off-screen */
+  width: 50%; /* Adjust width on larger screens */
+  height: 100vh;
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.logout-menu.show {
+  transform: translateX(100%); /* Slide the menu in */
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 40px; /* Add space below the X button */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar-line {
+  width: 80%; /* Adjust width */
+  height: 2px; /* Thickness of line */
+  background-color: #bbb; /* Line color */
+  margin: 10px auto; /* Space and center */
+}
+
+.username {
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px; /* Slight spacing below avatar */
+}
+
+.logout-btn {
+  margin-top: 10px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Exit Button (X) */
+.exit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.overlay-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Darken the background */
+  z-index: 1000; /* Below the logout menu */
+  display: none; /* Hidden by default */
+}
+
+@media (min-width: 1024px) { 
+  .logout-menu {
+    width: 250px; /* Set a fixed width */
+    position: fixed; /* Ensure it's fixed on the screen */
+    top: 0;
+    right: auto; /* Align it to the right */
+    left: 0; /* Override any previous left positioning */
+    height: 100vh; /* Full screen height */
+    transform: translateX(-100%); /* Start hidden */
+  }
+
+  .logout-menu.show {
+    transform: translateX(0); /* Slide in properly */
+  }
+}
+
+.exit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.exit-btn:hover {
+  color: #bbb;
+}
+
+.logout-text {
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center; /* Center the text */
+  cursor: pointer;
+  margin-top: 50px; /* Position logout text below the X button */
+  display: flex;
+  justify-content: flex-end; /* Align text to the right */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Ensure it takes full width */
+  margin-right: 20px; /* Add space on the right */
+}
+
+@media (max-width: 768px) {
+  .logout-text {
+    padding-right: 10px; /* Smaller space on mobile */
+  }
+}
+
+.logout-text:hover {
+  color: #bbb;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+body {
+  background-image: url('img/Megumin.png');
+  background-position: right 10px bottom 60px;
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  footer p {
+  margin: 0;
+  font-size: 0.9em;
+  }
+
+  .button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Yes button */
+.yes {
+    background-color: red !important;  /* Force red */
+    color: white !important;
+}
+
+/* No button */
+.no {
+    background-color: gray !important; /* Force gray */
+    color: white !important;
+}
+
+/*Top Up*/
+.berries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #6e6e6e;
+  margin-top: 10px;
+  padding: 5px 10px;
+  width: fit-content;
+  margin: 10px auto 5px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.berries-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.berries-count {
+  color: white;
+  margin-right: 5px;
+}
+
+.plus-icon {
+  background-color: white;
+  color: #222;
+  border-radius: 50%;
+  padding: 0 3.5px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.plus-icon:hover {
+  background-color: #ddd;
+  color: #000;
+  cursor: pointer;
+}
+
+.coin-shop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+@media (max-width: 506px) {
+  .coin-shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.coin-card {
+  background: #444;
+  color: #fff;
+  align-items: center;
+  width: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+/*
+.coin-shop {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px auto;
+  flex-wrap: wrap;
+}
+
+.coin-card {
+  background: #222;
+  color: #fff;
+  width: 200px;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+*/
+
+.most-popular {
+  transform: scale(1.05);
+  border: 2px solid #2196f3;
+}
+
+.coin-card:hover {
+  transform: translateY(-5px);
+}
+
+.coin-card img {
+  width: 60px;
+  margin: 15px 0;
+}
+
+.coin-amount {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.bonus {
+  color: #4caf50;
+  display: block;
+  font-size: 0.8em;
+}
+
+.buy-btn {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: #1976d2;
+}
+
+.ribbon {
+  position: absolute;
+  top: -1px;
+  right: -30px;
+  background: #ff9800;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.75em;
+  font-weight: bold;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/*Payment Method*/
+.payment-title {
+  text-align: center;
+  width: 100%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.payment-options img {
+  width: 40px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.payment-modal.hidden {
+  display: none;
+}
+
+.payment-modal-content {
+  background: #333; /* or any hex you like */
+  padding: 20px 30px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.payment-method img {
+  width: 34px;
+  height: auto;
+  object-fit: contain;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.payment-method:hover {
+  border: 2px solid #f8c471;
+  background-color: #2b2b2b;
+}

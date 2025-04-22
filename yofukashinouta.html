@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/lak.png">
+  <title>ListAnimeKu - Yofukashi no Uta</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleLogoutMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div id="logoutMenu" class="logout-menu">
+            <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+            <div class="logout-content">
+                <img src="img/Rikka.gif" alt="User Avatar" class="avatar">
+                <div class="avatar-line"></div>
+                <p class="username">User</p>
+                <div class="berries">
+                    <img src="img/berries.png" alt="Heart" class="berries-icon">
+                    <span class="berries-count">0</span>
+                    <a href="currency.html" class="plus-icon">+</a>
+                  </div>
+                <button class="logout-btn" onclick="showLogoutModal()">Logout</button>
+              </div>
+          </div>
+          <div id="overlay" class="overlay-background"></div>
+        <h1>List Anime Ku</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="incoming.html">Incoming</a>
+            <a>List</a>
+        </nav>
+
+        <div id="logoutMenu" class="logout-menu">
+            <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+            <p class="logout-text" onclick="logout()">Logout</p>
+          </div>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="image-section">
+                <img src="img/yofukashinouta.jpg" alt="Yofukashi no Uta" />
+            </div>
+            <div class="details-section">
+                <h2>Yofukashi no Uta</h2>
+                <p><strong>Japanese:</strong> よふかしのうた</p>
+                <p><strong>Seasons:</strong> Summer 2022</p>
+                <p><strong>Type:</strong> BD</p>
+                <p><strong>Total Episodes:</strong> 13</p>
+                <p><strong>Duration:</strong> 23 min per ep.</p>
+                <p><strong>Producers:</strong> Aniplex, Dentsu, Shogakukan, Shueisha Productions, Anima&Co., Fuji TV, Ultra Super Pictures, Shogakukan, Fuji Creative, Tohan Corporation</p>
+                <p><strong>Genre:</strong> Romance, Supernatural, Vampire</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Score:</strong> 7.96</p>
+                <p><strong>Released on:</strong> Jul 08, 2022</p>
+            </div>
+        </div>
+        <div class="synopsis">
+            <h3>Synopsis:</h3>
+            <p><b>Yofukashi no Uta</b> berpusat pada seorang anak SMP bernama Kou Yamori, kalau dari luar ia seperti anak SMP biasa pada umumnya. Dia cukup pandai, ramah dengan teman kelasnya dan berusaha terus bersikap demikian. Namun, ia kemudian memutuskan untuk berhenti berpura-pura dan berhenti sekolah. Dia mengalami insomnia hingga tak bisa tidur malam.</p>
+            <p>Pada suatu hari karena insomnianya kambur akhirnya Kou memutuskan untuk keluar rumah untuk menghabiskan malamnya. Ternyata keluar dimalam hari sangatlah nikmat baginya, dia merasakan sensi berbeda dari pada keluar disiang hari. Setelah itu Kou bertemu dengan gadis aneh bernama Nazuna Nanakusa yang memberitahukan padanya penyebab dia tak bisa tidur. Nazuna mengajaknya ke apartemen, beberapa saat kemudian Nazuna melalukan hal yang cukup aneh kepada Kou dengan kedua taringnya.</p>
+            <p>Ternyata Nazuna adalah seorang vampir yang ingin menghisap darahnya, dengan paniknya Kou berpikir kalau dia akan berubah menjadi vampir juga. Tapi Nazuna menjelaskan, kalau dirinya tidak punya niat untuk merubah manusia menjadi vampir, karena dia hanya ingin makan saja. Saat itu juga dalam pikiran Kou terlintas, bagaimana kalau dia menjadi vampir dan bisa hidup bebas di malam hari. Jadi Kou meminta Nazuna merubahnya menjadi vampir seperti dirinya.</p>
+            <p>Nazuna yang merasa cukup kaget karena baru bertemu manusia yang ingin menjadi vampir, ternyata ada suatu syarat untuk seorang vampir supaya bisa merubah manusia biasa menjadi vampir, yaitu; manusia tersebut harus jatuh cinta kepada vampir dan juga sebaliknya. Kou yang sama sekali tidak ada pengalaman tentang cinta, akhirnya berusaha untuk menyukai Nazuna. Dan dari sini lah kehidupan baru Kou di malam hari dimulai!!</p>
+        </div>
+        <div class="download"> 
+            <h3>Download links</h3>
+            <a href="https://acefile.co/f/98797161/kusonime-panggilan-malam-bd-360p-rar" target="_blank">360P</a>
+            <a href="https://acefile.co/f/98797163/kusonime-panggilan-malam-bd-480p-rar" target="_blank">480P</a>
+            <a href="https://acefile.co/f/98797165/kusonime-panggilan-malam-bd-720p-rar" target="_blank">720P</a>
+            <a href="https://acefile.co/f/98797165/kusonime-panggilan-malam-bd-720p-rar" target="_blank">1080P</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ListAnimeKu. All rights reserved.</p>
+      </footer>  
+      <div id="logoutOverlay" class="overlay" style="display: none;">
+        <div class="confirm-box">
+            <p>Are you sure you want to log out?</p>
+            <button class="button yes" onclick="confirmLogout()">Yes</button>
+            <button class="button no" onclick="closeLogoutModal()">No</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+      <script>
+        function showLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "flex";
+        }
+      
+        function closeLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "none";
+        }
+      
+        function confirmLogout() {
+            sessionStorage.removeItem("isLoggedIn"); // Clears session
+            window.location.href = "login.html"; // Redirects to login
+        }
+      </script>
+      <style>
+        /* Overlay background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        /* Modal box */
+        .confirm-box {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+        }
+      
+        /* Buttons */
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        .yes {
+            background: #ff4444;
+            color: white;
+        }
+      
+        .no {
+            background: gray;
+            color: white;
+        }
+      </style>
+      <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>    
+      </body>
+      </html>

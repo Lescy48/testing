@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/lak.png">
+  <title>ListAnimeKu - Grand Blue</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleLogoutMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div id="logoutMenu" class="logout-menu">
+            <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+            <div class="logout-content">
+                <img src="img/Rikka.gif" alt="User Avatar" class="avatar">
+                <div class="avatar-line"></div>
+                <p class="username">User</p>
+                <div class="berries">
+                    <img src="img/berries.png" alt="Heart" class="berries-icon">
+                    <span class="berries-count">0</span>
+                    <a href="currency.html" class="plus-icon">+</a>
+                  </div>
+                <button class="logout-btn" onclick="showLogoutModal()">Logout</button>
+              </div>
+          </div>
+          <div id="overlay" class="overlay-background"></div>
+        <h1>List Anime Ku</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="incoming.html">Incoming</a>
+            <a>List</a>
+        </nav>
+        <div class="logout-menu" id="logoutMenu">
+            <a href="login.html" onclick="logout()">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="image-section">
+                <img src="img/grandblue.jpg" alt="Grand Blue" />
+            </div>
+            <div class="details-section">
+                <h2>Grand Blue</h2>
+                <p><strong>Japanese:</strong> ぐらんぶる</p>
+                <p><strong>Seasons:</strong> Summer 2018</p>
+                <p><strong>Type:</strong> BD</p>
+                <p><strong>Total Episodes:</strong> 12</p>
+                <p><strong>Duration:</strong> 24 min per ep.</p>
+                <p><strong>Producers:</strong> NBCUniversal Entertainment Japan, Avex Pictures</p>
+                <p><strong>Genre:</strong> Comedy</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Score:</strong> 8.44</p>
+                <p><strong>Released on:</strong> Jul 14, 2018</p>
+            </div>
+        </div>
+        <div class="synopsis">
+            <h3>Synopsis:</h3>
+            <p><b>Grand Blue</b> anime ini berkisah tentang Kitahara Iori yang merupakan Mahasiswa baru di Izu University , karena kampus nya yang jauh dari rumah Iori pun menumpang di rumah paman nya yang kebetulan juga membuka Toko Penyewaan Alat Menyelam di pinggir pantai . Diri nya yang ketika SMA sekolah di STM (yang pasti cowo semua) ingin menikmati masa-masa kuliah nya dengan bersenang-senang dan mendekati banyak cewe . Di sana dia juga bertemu dengan kedua anak paman nya atau sepupunya yang sudah 10 tahun tidak bertemu ; Kotegawa Nanaka dan Chisa . Mereka berdua sudah sangat berubah dari terakhir kali bertemu, Nanaka menjadi wanita dewasa yang cantik dengan sifat ke Onee-san nya serta badan yang bagus dan Chisa juga menjadi gadis yang manis dan baik (awalnya) yang badan tidak kalah dengan kakaknya .</p>
+            <p>Tapi seperti nya Iori harus mengubur impiannya yang bisa pedekate-an dengan gadis-gadis yang ada di kampus nya . Karena dia di paksa untuk masuk kedalam Klub Menyelam yang bernama Peek a Boo yang isi hampir semua cowo hanya chisa dan nanaka yang cewe . Dan di perparah isi semua orang di dalam club itu bukan orang waras . Hal pertama yang Iori liat ketika masuk ke Universitas bukanlah wanita cantik melainkan para anggota Peek a Boo yang sedang berpesta dengan gila di toko paman nya . Gimana kah nasib Iori di kampus baru nya ini ? Apakah dia tetap bisa di jalan yang lurus atau mungkin dia tersesat dengan teh Oolong ? Silahkan menikmati anime ini :v</p>
+            <p>Salah satu anime paling lucu di musim panas 2018 ini dengan komedi nya yang sangat kuat dan lawakan-lawakan dewasa nya . Walaupun begitu Opening dari grend blue menjadi opening terbagus menurut mimin di musim ini , penampilan visual dengan lagu “Ichigo Ichie” di bawakan oleh Shonan no Kaze membuat visual opening nya sangat indah dan wow , tapi nyata nya sih isi cerita dengan keindahan opening nya sangat berbeda jauh wkwkw</p>
+        </div>
+        <div class="download"> 
+            <h3>Download links</h3>
+            <a href="https://acefile.co/f/9266832/zen-kuso-mabok-mabokan-the-animation-bd-360p-v2-rar" target="_blank">360P</a>
+            <a href="https://acefile.co/f/9266832/zen-kuso-mabok-mabokan-the-animation-bd-360p-v2-rar" target="_blank">480P</a>
+            <a href="https://acefile.co/f/9266832/zen-kuso-mabok-mabokan-the-animation-bd-360p-v2-rar" target="_blank">720P</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ListAnimeKu. All rights reserved.</p>
+      </footer>  
+      <div id="logoutOverlay" class="overlay" style="display: none;">
+        <div class="confirm-box">
+            <p>Are you sure you want to log out?</p>
+            <button class="button yes" onclick="confirmLogout()">Yes</button>
+            <button class="button no" onclick="closeLogoutModal()">No</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+      <script>
+        function showLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "flex";
+        }
+      
+        function closeLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "none";
+        }
+      
+        function confirmLogout() {
+            sessionStorage.removeItem("isLoggedIn"); // Clears session
+            window.location.href = "login.html"; // Redirects to login
+        }
+      </script>
+      <style>
+        /* Overlay background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        /* Modal box */
+        .confirm-box {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+        }
+      
+        /* Buttons */
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        .yes {
+            background: #ff4444;
+            color: white;
+        }
+      
+        .no {
+            background: gray;
+            color: white;
+        }
+      </style>
+      <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>    
+      </body>
+      </html>

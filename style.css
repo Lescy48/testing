@@ -1,0 +1,420 @@
+html {
+  transform-origin: top left;
+  transition: transform 0.3s ease-in-out;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Hilangkan efek tap biru di mobile */
+  -webkit-touch-callout: none; /* Cegah menu popup (iOS) */
+}
+
+body {
+  transform-origin: top left;
+  zoom: 1; /* Default zoom */
+  font-family: Arial, sans-serif;
+  background-color: #333;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+}
+
+header h1 {
+  font-size: 4em;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #bbb; /* Buat warna teks sedikit lebih gelap saat di-hover */
+}
+
+/* Anime Card */
+.anime-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Maksimal 2 kolom */
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 900px; /* Batasi lebar maksimal */
+  margin: 0 auto; /* Pusatkan grid */
+}
+
+.anime-link {
+  text-decoration: none; /* Hilangkan underline */
+  color: inherit; /* Warna teks sesuai konteks */
+}
+
+.anime-card {
+  display: flex;
+  background-color: #444;
+  align-items: center;
+  gap: 20px; /* Jarak antara gambar dan teks lebih besar */
+  width: 100%; /* Pastikan card lebih fleksibel */
+  height: auto; /* Tinggi card menyesuaikan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi saat hover */
+}
+
+.anime-card:hover {
+  transform: scale(1.05); /* Membesar sedikit saat di-hover */
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); /* Tambahkan bayangan */
+}
+
+.anime-card img {
+  width: 200px; /* Gambar lebih besar */
+  height: 250px; /* Sesuaikan tinggi gambar */
+  object-fit: cover;
+}
+
+.anime-details {
+  width: 100%;
+}
+
+.anime-details h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 10px 0 10px;
+}
+
+.anime-details p {
+  font-size: 0.9em; /* Teks lebih besar */
+  margin: 26px 0; /* Tambah jarak antar paragraf */
+  text-align: left; /* Pastikan paragraf tetap rata kiri */
+}
+
+.card {
+  flex: 1 1 calc(50% - 20px); /* Maksimum 2 kartu per baris */
+  max-width: 500px; /* Batasi ukuran maksimum kartu */
+  transition: transform 0.3s ease-in-out;
+}
+
+.container {
+  max-width: 1200px; /* Batasi agar tidak terlalu lebar */
+  margin: 0 auto; /* Pusatkan container */
+  padding: 0 20px; /* Beri jarak sisi kiri & kanan */
+  display: flex;
+  flex-wrap: wrap; /* Pastikan tidak lebih dari 2 kolom */
+  justify-content: center; /* Pusatkan item */
+  gap: 20px; /* Beri jarak antar kartu */
+}
+
+@media (min-width: 1400px) {
+  .container {
+    transform: scale(1.1); /* Perbesar elemen */
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    transform: scale(1.2); /* Lebih besar saat layar makin lebar */
+  }
+}
+
+@media (max-width: 768px) {
+  .anime-list {
+    grid-template-columns: repeat(1, 1fr); /* Jadi 1 kolom di layar kecil */
+    padding: 20px; /* Supaya lebih rapat di layar kecil */
+  }
+
+  .anime-card {
+    flex-direction: row; /* Tetap sejajar: gambar kiri, teks kanan */
+    align-items: center;
+    width: 100%; /* Pastikan card tidak terlalu besar */
+  }
+
+  .anime-card img {
+    width: 150px; /* Perkecil gambar agar tetap rapi */
+    height: auto;
+  }
+
+  .anime-details {
+    flex: 1; /* Biar teks tidak terlalu sempit */
+  }
+
+  .anime-details h2 {
+    font-size: 1.2em; /* Sesuaikan ukuran teks */
+  }
+
+  .anime-details p {
+    font-size: 0.85em; /* Perkecil teks sedikit supaya rapi */
+  }
+}
+
+/* Menu icon */
+.menu-icon {
+  position: absolute;
+  top: 97px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.menu-icon .line {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 484px) {
+  .menu-icon {
+    top: 171px
+  }
+}
+
+/* Darken the icon lines on hover */
+.menu-icon:hover .line {
+  background-color: #bbb; /* Darker color on hover */
+}
+
+/* Logout menu */
+#logoutOverlay {
+  display: none;
+}
+
+.logout-menu {
+  position: fixed;
+  top: 0;
+  left: -50%; /* Start from the left, off-screen */
+  width: 50%; /* Adjust width on larger screens */
+  height: 100vh;
+  background-color: #444;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  transition: transform 0.3s ease;
+}
+
+.logout-menu.show {
+  transform: translateX(100%); /* Slide the menu in */
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 40px; /* Add space below the X button */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.avatar-line {
+  width: 80%; /* Adjust width */
+  height: 2px; /* Thickness of line */
+  background-color: #bbb; /* Line color */
+  margin: 10px auto; /* Space and center */
+}
+
+.username {
+  font-size: 1.2em;
+  color: #fff;
+  text-align: center;
+  margin-top: 10px; /* Slight spacing below avatar */
+  margin-bottom: 10px;
+}
+
+.berries {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #6e6e6e;
+  margin-top: 10px;
+  padding: 5px 10px;
+  width: fit-content;
+  margin: 10px auto 5px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.berries-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.berries-count {
+  color: white;
+  margin-right: 5px;
+}
+
+.plus-icon {
+  background-color: white;
+  color: #222;
+  border-radius: 50%;
+  padding: 0 3.5px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.plus-icon:hover {
+  background-color: #ddd;
+  color: #000;
+  cursor: pointer;
+}
+
+.logout-btn {
+  margin-top: 10px;
+  background-color: #ff4444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #cc0000;
+}
+
+/* Exit Button (X) */
+.exit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.overlay-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Darken the background */
+  z-index: 1000; /* Below the logout menu */
+  display: none; /* Hidden by default */
+}
+
+@media (min-width: 1024px) { 
+  .logout-menu {
+    width: 250px; /* Set a fixed width */
+    position: fixed; /* Ensure it's fixed on the screen */
+    top: 0;
+    right: auto; /* Align it to the right */
+    left: 0; /* Override any previous left positioning */
+    height: 100vh; /* Full screen height */
+    transform: translateX(-100%); /* Start hidden */
+  }
+
+  .logout-menu.show {
+    transform: translateX(0); /* Slide in properly */
+  }
+}
+
+.exit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.exit-btn:hover {
+  color: #bbb;
+}
+
+.logout-text {
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center; /* Center the text */
+  cursor: pointer;
+  margin-top: 50px; /* Position logout text below the X button */
+  display: flex;
+  justify-content: flex-end; /* Align text to the right */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Ensure it takes full width */
+  margin-right: 20px; /* Add space on the right */
+}
+
+@media (max-width: 768px) {
+  .logout-text {
+    padding-right: 10px; /* Smaller space on mobile */
+  }
+}
+
+.logout-text:hover {
+  color: #bbb;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+body {
+  background-image: url('img/Megumin.png');
+  background-position: right 10px bottom 60px;
+  background-repeat: no-repeat;
+  background-size: 200px auto;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #222;
+  color: #fff;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  footer p {
+  margin: 0;
+  font-size: 0.9em;
+  }
+
+  .button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Yes button */
+.yes {
+    background-color: red !important;  /* Force red */
+    color: white !important;
+}
+
+/* No button */
+.no {
+    background-color: gray !important; /* Force gray */
+    color: white !important;
+}

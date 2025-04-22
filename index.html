@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/lak.png">
+  <title>ListAnimeKu - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleLogoutMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+<div id="logoutMenu" class="logout-menu">
+  <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+  <div class="logout-content">
+    <img src="img/Rikka.gif" alt="User Avatar" class="avatar">
+    <div class="avatar-line"></div>
+    <p class="username">User</p>
+    <div class="berries">
+      <img src="img/berries.png" alt="Heart" class="berries-icon">
+      <span class="berries-count">0</span>
+      <a href="currency.html" class="plus-icon">+</a>
+    </div>
+    <button class="logout-btn" onclick="showLogoutModal()">Logout</button>
+  </div>
+</div>
+<div id="overlay" class="overlay-background"></div>
+    <h1>List Anime Ku</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="trending.html">Trending</a>
+      <a href="incoming.html">Incoming</a>
+      <a>List</a>
+    </nav>
+    <div class="logout-menu" id="logoutMenu">
+      <a href="login.html" onclick="logout()">Logout</a>
+   </div>
+  </header>
+
+<main class="anime-list">
+  <a href="yofukashinouta.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/yofukashinouta.jpg" alt="Yofukashi no Uta">
+      <div class="anime-details">
+        <h2>Yofukashi no Uta</h2>
+        <p>Type: TV</p>
+        <p>Genres: Romance, Supernatural, Vampire</p>
+        <p>Episodes: 13</p>
+        <p>Rating: 7.96</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="grandblue.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/grandblue.jpg" alt="Grand Blue">
+      <div class="anime-details">
+        <h2>Grand Blue</h2>
+        <p>Type: TV</p>
+        <p>Genres: Comedy</p>
+        <p>Episodes: 12</p>
+        <p>Rating: 8.44</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="konosuba.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/konosuba.jpg" alt="Kono Subarashii Sekai ni Shukufuku wo!">
+      <div class="anime-details">
+        <h2>Kono Subarashii Sekai ni Shukufuku wo!</h2>
+        <p>Type: TV</p>
+        <p>Genres: Fantasy, Comedy, Isekai</p>
+        <p>Episodes: 10</p>
+        <p>Rating: 8.10</p>
+      </div>
+    </div>
+  </a>
+  
+  <a href="konosuba2.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/konosuba2.jpg" alt="Kono Subarashii Sekai ni Shukufuku wo! 2">
+      <div class="anime-details">
+        <h2>Kono Subarashii Sekai ni Shukufuku wo! 2</h2>
+        <p>Type: TV</p>
+        <p>Genres: Fantasy, Comedy, Isekai</p>
+        <p>Episodes: 10</p>
+        <p>Rating: 8.25</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="nisekoi.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/nisekoi.jpg" alt="Nisekoi">
+      <div class="anime-details">
+        <h2>Nisekoi</h2>
+        <p>Type: TV</p>
+        <p>Genres: Harem, Romance, Comedy</p>
+        <p>Episodes: 20</p>
+        <p>Rating: 7.56</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="nisekoi2.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/nisekoi2.jpg" alt="Nisekoi:">
+      <div class="anime-details">
+        <h2>Nisekoi:</h2>
+        <p>Type: TV</p>
+        <p>Genres: Harem, Romance, Comedy</p>
+        <p>Episodes: 12</p>
+        <p>Rating: 7.34</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="ngnl.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/ngnl.jpg" alt="No Game No Life">
+      <div class="anime-details">
+        <h2>No Game No Life</h2>
+        <p>Type: TV</p>
+        <p>Genres: Comedy, Fantasy, Ecchi</p>
+        <p>Episodes: 12</p>
+        <p>Rating: 8.05</p>
+      </div>
+    </div>
+  </a>
+
+  <a href="cicak.html" class="anime-link">
+    <div class="anime-card">
+      <img src="img/cicak.jpg" alt="Shigatsu wa Kimi no Uso">
+      <div class="anime-details">
+        <h2>Shigatsu wa Kimi no Uso</h2>
+        <p>Type: TV</p>
+        <p>Genres: Drama, Romance</p>
+        <p>Episodes: 22</p>
+        <p>Rating: 8.64</p>
+      </div>
+    </div>
+  </a>
+
+</main>
+
+<footer>
+  <p>&copy; 2024 ListAnimeKu. All rights reserved.</p>
+</footer>  
+<div id="logoutOverlay" class="overlay" style="display: none;">
+  <div class="confirm-box">
+      <p>Are you sure you want to log out?</p>
+      <button class="button yes" onclick="confirmLogout()">Yes</button>
+      <button class="button no" onclick="closeLogoutModal()">No</button>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+  function showLogoutModal() {
+      document.getElementById("logoutOverlay").style.display = "flex";
+  }
+
+  function closeLogoutModal() {
+      document.getElementById("logoutOverlay").style.display = "none";
+  }
+
+  function confirmLogout() {
+      sessionStorage.removeItem("isLoggedIn"); // Clears session
+      window.location.href = "login.html"; // Redirects to login
+  }
+</script>
+<style>
+  /* Overlay background */
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  /* Modal box */
+  .confirm-box {
+      background: #444;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Buttons */
+  .button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .yes {
+      background: #ff4444;
+      color: white;
+  }
+
+  .no {
+      background: gray;
+      color: white;
+  }
+</style>
+<script>
+  window.onload = function() {
+      if (!sessionStorage.getItem("isLoggedIn")) {
+          window.location.href = "login.html";
+      }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/lak.png">
+  <title>ListAnimeKu - Incoming</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="menu-icon" onclick="toggleLogoutMenu()">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+    <div id="logoutMenu" class="logout-menu">
+      <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+      <div class="logout-content">
+        <img src="img/Rikka.gif" alt="User Avatar" class="avatar">
+        <div class="avatar-line"></div>
+        <p class="username">User</p>
+        <div class="berries">
+          <img src="img/berries.png" alt="Heart" class="berries-icon">
+          <span class="berries-count">0</span>
+          <a href="currency.html" class="plus-icon">+</a>
+        </div>
+        <button class="logout-btn" onclick="showLogoutModal()">Logout</button>
+      </div>
+    </div>
+    <div id="overlay" class="overlay-background"></div>
+
+    <h1>List Anime Ku</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="trending.html">Trending</a>
+      <a href="incoming.html">Incoming</a>
+      <a>List</a>
+    </nav>
+    <div class="logout-menu" id="logoutMenu">
+      <a href="login.html" onclick="logout()">Logout</a>
+   </div>
+  </header>
+
+<main class="anime-list">
+
+    <div class="anime-card">
+      <img src="img/grandblue2.jpg" alt="Grand Blue 2">
+      <div class="anime-details">
+        <h2>Grand Blue Season 2</h2>
+        <p>Type: TV</p>
+        <p>Genres: Comedy</p>
+        <p>Episodes: Unknown</p>
+        <p>Rating: N/A</p>
+      </div>
+    </div>
+  </a>
+
+    <div class="anime-card">
+      <img src="img/ngnl2.jpg" alt="No Game No Life 2">
+      <div class="anime-details">
+        <h2>No Game No Life 2</h2>
+        <p>Type: TV</p>
+        <p>Genres: Comedy, Fantasy, Ecchi</p>
+        <p>Episodes: Unknown</p>
+        <p>Rating: N/A</p>
+      </div>
+    </div>
+  </a>
+
+    <div class="anime-card">
+      <img src="img/dandadan.jpg" alt="Dandadan">
+      <div class="anime-details">
+        <h2>Dandadan</h2>
+        <p>Type: TV</p>
+        <p>Genres: Action, Comedy, Supernatural</p>
+        <p>Episodes: 12</p>
+        <p>Rating: N/A</p>
+      </div>
+    </div>
+  </a>
+
+    <div class="anime-card">
+      <img src="img/opm3.jpg" alt="One Punch Man 3">
+      <div class="anime-details">
+        <h2>One Punch Man 3</h2>
+        <p>Type: TV</p>
+        <p>Genres: Action, Comedy</p>
+        <p>Episodes: Unknown</p>
+        <p>Rating: N/A</p>
+      </div>
+    </div>
+  </a>
+
+</main>
+<footer>
+  <p>&copy; 2024 ListAnimeKu. All rights reserved.</p>
+</footer>  
+<div id="logoutOverlay" class="overlay" style="display: none;">
+  <div class="confirm-box">
+      <p>Are you sure you want to log out?</p>
+      <button class="button yes" onclick="confirmLogout()">Yes</button>
+      <button class="button no" onclick="closeLogoutModal()">No</button>
+  </div>
+</div>
+<script src="script.js"></script>
+<script>
+  function showLogoutModal() {
+      document.getElementById("logoutOverlay").style.display = "flex";
+  }
+
+  function closeLogoutModal() {
+      document.getElementById("logoutOverlay").style.display = "none";
+  }
+
+  function confirmLogout() {
+      sessionStorage.removeItem("isLoggedIn"); // Clears session
+      window.location.href = "login.html"; // Redirects to login
+  }
+</script>
+<style>
+  /* Overlay background */
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  /* Modal box */
+  .confirm-box {
+      background: #444;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Buttons */
+  .button {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+
+  .yes {
+      background: #ff4444;
+      color: white;
+  }
+
+  .no {
+      background: gray;
+      color: white;
+  }
+</style>
+<script>
+  window.onload = function() {
+      if (!sessionStorage.getItem("isLoggedIn")) {
+          window.location.href = "login.html";
+      }
+  }
+</script>
+</body>
+</html>

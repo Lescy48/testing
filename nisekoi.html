@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/lak.png">
+  <title>ListAnimeKu - Nisekoi</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleLogoutMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div id="logoutMenu" class="logout-menu">
+            <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+            <div class="logout-content">
+                <img src="img/Rikka.gif" alt="User Avatar" class="avatar">
+                <div class="avatar-line"></div>
+                <p class="username">User</p>
+                <div class="berries">
+                    <img src="img/berries.png" alt="Heart" class="berries-icon">
+                    <span class="berries-count">0</span>
+                    <a href="currency.html" class="plus-icon">+</a>
+                  </div>
+                <button class="logout-btn" onclick="showLogoutModal()">Logout</button>
+              </div>
+          </div>
+          <div id="overlay" class="overlay-background"></div>
+        <h1>List Anime Ku</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="incoming.html">Incoming</a>
+            <a>List</a>
+        </nav>
+        <div class="logout-menu" id="logoutMenu">
+            <a href="login.html" onclick="logout()">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="image-section">
+                <img src="img/nisekoi.jpg" alt="Nisekoi" />
+            </div>
+            <div class="details-section">
+                <h2>Nisekoi</h2>
+                <p><strong>Japanese:</strong> ニセコイ</p>
+                <p><strong>Seasons:</strong> Anime OVA, Spring 2015, Winter 2014</p>
+                <p><strong>Type:</strong> BD</p>
+                <p><strong>Total Episodes:</strong> 20</p>
+                <p><strong>Duration:</strong> 24 min per ep.</p>
+                <p><strong>Producers:</strong> Aniplex, Mainichi Broadcasting System, Shueisha</p>
+                <p><strong>Genre:</strong> Harem, Romance, Comedy</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Score:</strong> 7.56</p>
+                <p><strong>Released on:</strong> Jan 11, 2014</p>
+            </div>
+        </div>
+        <div class="synopsis">
+            <h3>Synopsis:</h3>
+            <p><b>Nisekoi; False Love</b> adalah anime Romance, Harem dan Comedy yang populer di kalangan wibu di seluruh dunia yang bercerita tentang Raku Ichijou yang merupakan siswa SMA biasa . Tapi , sebenarnya dia juga seorang penerus tunggal dari sebuah Keluarga Yakuza , bernama Shuei-gumi . 10 tahun lalu , Raku membuat sebuah janji, sebuah janji rahasia yang dia buat bersama gadis yang dia temui . Mereka berjanji “Kalau kita bertemu lagi , kita akan menikah” . Sejak saat itu, Raku tak pernah melepas kalung kunci bukti dari janji mereka .</p>
+            <p>Suatu hari , seorang gadis cantik bernama Chitoge Kirisaki, menjadi murid baru di kelasnya Raku . Mereka berdua sering bersama . Tak ada hari tanpa berantem dan saling ejek, hal itu dikarenakan pertemuan pertama mereka yang tak menyenangkan. Di samping itu, Raku punya rasa suka ke teman sekelasnya yang lain, Kosaki Onodera . Namun, muncullah situasi dimana Chitoge dan Raku harus berpura-pura, berpura-pura menjadi sepasang kekasih .</p>
+            <p><b>Sequel:</b> <a href="nisekoi2.html">Nisekoi:</a></p>
+        </div>
+        <div class="download"> 
+            <h3>Download links</h3>
+            <a href="https://acefile.co/f/60195758/kusonime-cinta-palsu-bedeh-360p-rar" target="_blank">360P</a>
+            <a href="https://acefile.co/f/60195760/kusonime-cinta-palsu-bedeh-480p-rar" target="_blank">480P</a>
+            <a href="https://acefile.co/f/60195762/kusonime-cinta-palsu-bedeh-720p-rar" target="_blank">720P</a>
+            <a href="https://acefile.co/f/60195756/kusonime-cinta-palsu-01-10-bedeh-1080p-rar" target="_blank">1080P [01-10]</a>
+            <a href="https://acefile.co/f/60195757/kusonime-cinta-palsu-11-20-bedeh-1080p-rar" target="_blank">1080P [11-20]</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ListAnimeKu. All rights reserved.</p>
+      </footer>  
+      <div id="logoutOverlay" class="overlay" style="display: none;">
+        <div class="confirm-box">
+            <p>Are you sure you want to log out?</p>
+            <button class="button yes" onclick="confirmLogout()">Yes</button>
+            <button class="button no" onclick="closeLogoutModal()">No</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+      <script>
+        function showLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "flex";
+        }
+      
+        function closeLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "none";
+        }
+      
+        function confirmLogout() {
+            sessionStorage.removeItem("isLoggedIn"); // Clears session
+            window.location.href = "login.html"; // Redirects to login
+        }
+      </script>
+      <style>
+        /* Overlay background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        /* Modal box */
+        .confirm-box {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+        }
+      
+        /* Buttons */
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        .yes {
+            background: #ff4444;
+            color: white;
+        }
+      
+        .no {
+            background: gray;
+            color: white;
+        }
+      </style>
+      <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>    
+      </body>
+      </html>

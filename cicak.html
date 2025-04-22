@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/lak.png">
+  <title>ListAnimeKu - Shigatsu wa Kimi no Uso</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="menu-icon" onclick="toggleLogoutMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div id="logoutMenu" class="logout-menu">
+            <button class="exit-btn" onclick="toggleLogoutMenu()">X</button>
+            <div class="logout-content">
+                <img src="img/Rikka.gif" alt="User Avatar" class="avatar">
+                <div class="avatar-line"></div>
+                <p class="username">User</p>
+                <div class="berries">
+                    <img src="img/berries.png" alt="Heart" class="berries-icon">
+                    <span class="berries-count">0</span>
+                    <a href="currency.html" class="plus-icon">+</a>
+                  </div>
+                <button class="logout-btn" onclick="showLogoutModal()">Logout</button>
+              </div>
+          </div>
+          <div id="overlay" class="overlay-background"></div>
+        <h1>List Anime Ku</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="trending.html">Trending</a>
+            <a href="incoming.html">Incoming</a>
+            <a>List</a>
+        </nav>
+        <div class="logout-menu" id="logoutMenu">
+            <a href="login.html" onclick="logout()">Logout</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="image-section">
+                <img src="img/cicak.jpg" alt="Shigatsu wa Kimi No Uso" />
+            </div>
+            <div class="details-section">
+                <h2>Shigatsu wa Kimi No Uso</h2>
+                <p><strong>Japanese:</strong> 四月は君の嘘</p>
+                <p><strong>Seasons:</strong> Fall 2014</p>
+                <p><strong>Type:</strong> BD</p>
+                <p><strong>Total Episodes:</strong> 22</p>
+                <p><strong>Duration:</strong> 24 min per ep.</p>
+                <p><strong>Producers:</strong> Aniplex, Dentsu, Kodansha, Fuji TV, Kyoraku Industrial Holdings</p>
+                <p><strong>Genre:</strong> Drama, Romance</p>
+                <p><strong>Status:</strong> Completed</p>
+                <p><strong>Score:</strong> 8.64</p>
+                <p><strong>Released on:</strong> Oct 10, 2014</p>
+            </div>
+        </div>
+        <div class="synopsis">
+            <h3>Synopsis:</h3>
+            <p><b>Shigatsu wa Kimi No Uso (Your Lie in April)</b> berpusat pada Kousei Arima, seorang anak yang berbakat dalam bermain piano, yang selalu mendominasi dalam kompetisi dan menjadikannya terkenal di antara para musikus cilik. Setelah ibu sekaligus instrukturnya meninggal dunia, dia mengalami penurunan mental di tengah-tengah suatu pertunjukan pianonya di usia 11 tahun. Trauma yang diderita olehnya menyebabkan Ia kehilangan kemampuan untuk mendengar suara dentingan piano meskipun secara fisik pendengarannya baik-baik saja. Dua tahun berlalu, Kousei tidak pernah menyentuh pianonya dan beranggapan dunianya sebagai dunia yang monoton tanpa warna. Dia pun seakan melepas kehidupannya dan hanya berinteraksi dekat dengan kedua sahabatnya: Tsubaki Sawabe dan Ryota Watari, hingga pada suatu hari, Ia bertemu seseorang yang mengubah hidupnya serta memberikan kembali warna dalam hidupnya: Kaori Miyazono.</p>
+            <p>Kaori adalah seorang pemain biola seumuran Kousei yang bersifat ceria dan penuh semangat serta memiliki gaya bermain musik yang bebas dan ekspresif; berlawanan dengan gaya bermain Kousei yang kaku dan terstuktur. Lambat laun, Kaori menuntun Kousei kembali ke dunia musik dan menunjukkan bahwa permainan musik adalah sebuah hal yang perlu diresapi menggunakan perasaan dan imajinasi. Kousei pun secara perlahan menemukan makna baru dalam permainan musiknya dan juga menaruh perasaan suka kepada Kaori, tanpa menyadari ada alasan tersendiri bagi Kaori untuk menuntun Kousei kembali ke dunia musik.</p>
+            <img src="img/kaoricicak.jpeg" alt="Kaori Miyazono" class="synopsis-img" />
+            <p class="centered-text">(btw, kok mirip yah? wkwkwkwk)</p>
+            <style>
+                .centered-text {
+                    text-align: center;
+                    font-size: 15px;
+                    margin-top: 5px;
+                    font-style: italic;
+                    color: gray;
+                }
+            </style>        
+        </div>
+        <div class="download"> 
+            <h3>Download links</h3>
+            <a href="https://acefile.co/f/10741941/kusonime-shigatsu-wa-kimi-no-uso_bd-360p-rar" target="_blank">360P</a>
+            <a href="https://acefile.co/f/10741953/ks-shigatsu-wa-kimi-no-uso-bd-480p-rar" target="_blank">480P</a>
+            <a href="https://acefile.co/f/10741954/ks-shigatsu-wa-kimi-no-uso-bd-720p-rar" target="_blank">720P</a>
+        </div>
+        <div class="comment">
+            <h3>Comment</h3>
+            <div class="comment-line"></div>
+        
+            <form id="comment-form" method="POST" action="comments.php">
+                <textarea name="comment_text" placeholder="Add your comment here..." required></textarea>
+                <input type="hidden" name="parent_id" id="parent_id" value="">
+                <button type="submit">Submit</button>
+            </form>
+            <div id="commentList" class="comment-list">
+            </div>
+        </div>
+        
+        <script>
+            // Add comment dynamically
+            function addComment(event) {
+                event.preventDefault();
+        
+                const commentInput = document.getElementById('commentInput');
+                const commentText = commentInput.value.trim();
+                
+                if (commentText) {
+                    const commentList = document.getElementById('commentList');
+        
+                    // Create comment element
+                    const commentItem = document.createElement('div');
+                    commentItem.classList.add('comment-item');
+                    commentItem.textContent = commentText;
+        
+                    commentList.appendChild(commentItem);
+                    commentInput.value = ''; // Clear the input after adding the comment
+                }
+            }
+            function loadComments() {
+    fetch("get_comments.php")
+        .then(response => response.json())
+        .then(data => {
+            let commentSection = document.getElementById("commentList"); // Perbaiki ID-nya
+            commentSection.innerHTML = ""; // Hapus komentar lama
+            data.forEach(comment => {
+                commentSection.innerHTML += `<p><strong>User ${comment.user_id}:</strong> ${comment.comment_text}</p>`;
+            });
+        })
+        .catch(error => console.error("Error loading comments:", error));
+}
+
+// Load komentar saat halaman dibuka
+window.onload = loadComments;
+        </script>
+        <div id="comments"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ListAnimeKu. All rights reserved.</p>
+      </footer>  
+      <div id="logoutOverlay" class="overlay" style="display: none;">
+        <div class="confirm-box">
+            <p>Are you sure you want to log out?</p>
+            <button class="button yes" onclick="confirmLogout()">Yes</button>
+            <button class="button no" onclick="closeLogoutModal()">No</button>
+        </div>
+      </div>
+      <script src="script.js"></script>
+      <script>
+        function showLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "flex";
+        }
+      
+        function closeLogoutModal() {
+            document.getElementById("logoutOverlay").style.display = "none";
+        }
+      
+        function confirmLogout() {
+            sessionStorage.removeItem("isLoggedIn"); // Clears session
+            window.location.href = "login.html"; // Redirects to login
+        }
+      </script>
+      <style>
+        /* Overlay background */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+      
+        /* Modal box */
+        .confirm-box {
+            background: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+        }
+      
+        /* Buttons */
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+      
+        .yes {
+            background: #ff4444;
+            color: white;
+        }
+      
+        .no {
+            background: gray;
+            color: white;
+        }
+      </style>
+      <script>
+        window.onload = function() {
+            if (!sessionStorage.getItem("isLoggedIn")) {
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("comment-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah reload
+        
+            let formData = new FormData(this);
+        
+            fetch("comments.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log(result); // Lihat hasilnya di console
+                loadComments(); // Reload daftar komentar setelah submit
+                this.reset(); // Bersihkan input setelah kirim
+            })
+            .catch(error => console.error("Error:", error));
+        });
+        </script>          
+      </body>
+      </html>
