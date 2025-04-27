@@ -47,8 +47,14 @@ function reply(commentId) {
 function openPaymentModal(amount) {
   const modal = document.getElementById("paymentModal");
   modal.classList.remove("hidden");
-  document.body.classList.add("modal-open"); // Hilangkan scroll
-  console.log("Top up:", amount);
+  document.body.classList.add("modal-open");
+
+  // Update semua nominal pembayaran
+  const paymentAmounts = document.querySelectorAll(".payment-amount");
+  paymentAmounts.forEach(span => {
+    span.textContent = `Rp ${Number(amount).toLocaleString('id-ID')}`;
+    span.style.marginLeft = "auto"; // Biar mojok kanan
+  });
 }
 
 // Tutup modal
